@@ -1,9 +1,9 @@
-# Your Name Here
+# Ryan Dennis
 # UWYO COSC 1010
-# Submission Date
+# 10/15/2024
 # HW 01
-# Lab Section: 
-# Sources, people worked with, help given to: 
+# Lab Section: 14
+# Sources, people worked with, help given to: Used https://www.geeksforgeeks.org/python-convert-two-lists-into-a-dictionary/ to figure out how to combine two lists into a dictionary.
 # your
 # comments
 # here
@@ -30,7 +30,30 @@
 # whose average score is greater than 80.
 
 #Solution
+students = [
+     {"name": "Alice", "scores": {"Math": 85, "Science": 90, "English": 78}},
+     {"name": "Bob", "scores": {"Math": 70, "Science": 88, "English": 82}},
+     {"name": "Charlie", "scores": {"Math": 92, "Science": 81, "English": 89}},
+     {"name": "David", "scores": {"Math": 60, "Science": 75, "English": 80}}
+]
 
+names = []
+for student in students:
+    name = student["name"]
+    names.append(name)
+print(names)
 
+ave = []
+for student in students:
+    scores = student["scores"]
+    ave_score = sum(scores.values()) / len(scores)
+    ave.append(ave_score)
+print(ave)
 
+name_average = dict(zip(names, ave))
+print(name_average)
+
+for name, score in name_average.items():
+    if score > 80:
+        print(f"{name}'s average score is greater than 80.")
 
