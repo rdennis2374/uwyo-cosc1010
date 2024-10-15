@@ -3,7 +3,7 @@
 # 10/15/2024
 # HW 01
 # Lab Section: 14
-# Sources, people worked with, help given to: Used https://www.geeksforgeeks.org/python-convert-two-lists-into-a-dictionary/ to figure out how to combine two lists into a dictionary.
+# Sources, people worked with, help given to: Max Holmes
 # your
 # comments
 # here
@@ -37,23 +37,14 @@ students = [
      {"name": "David", "scores": {"Math": 60, "Science": 75, "English": 80}}
 ]
 
-names = []
-for student in students:
-    name = student["name"]
-    names.append(name)
-print(names)
-
-ave = []
+student_scores = {}
 for student in students:
     scores = student["scores"]
-    ave_score = sum(scores.values()) / len(scores)
-    ave.append(ave_score)
-print(ave)
+    average_score = sum(scores.values()) / len(scores)
+    student_scores[student["name"]] = average_score
 
-name_average = dict(zip(names, ave))
-print(name_average)
 
-for name, score in name_average.items():
+for name,score in student_scores.items():
     if score > 80:
         print(f"{name}'s average score is greater than 80.")
 
