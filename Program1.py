@@ -24,4 +24,4 @@ def morse_message (word):
             print("Please enter a word")
             break
     print(message)
-morse_message("Go pokes")
+morse_message("")
